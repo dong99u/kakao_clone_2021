@@ -28,23 +28,31 @@
         <p class="header__text">If you have a Kakao Account, log in with your email or phone number.</p>
     </header>
 
-    <form action="" class="login-form">
-        <div class="login-form__container">
-            <input type="text" name="" required>
-            <label for="">Email or phone number</label>
-        </div>
-        <div class="login-form__container">
-            <input type="password" name="" required>
-            <label for="">Password</label>
-        </div>
-        <div class="login-form__forgot-password">
-            Forget Password?
-        </div>
-        <input type="submit" value="Log In">
-        <div class="login-form__signup-link">
-            Not a member? <a href="#">Signup</a>
-        </div>
-    </form>
+    <div class="login-container">
+        <h2>Login</h2>
+        
+        <form class="login-container__form" action="">
+            <div class="login-container__input">
+                <input type="text" required>
+                <span></span>
+                <label for="">Username</label>
+            </div>
+            <div class="login-container__input">
+                <input type="password" required>
+                <span></span>
+                <label for="">Password</label>
+            </div>
+            <span class="login-container__pass">
+                Forgot Password?
+            </span>
+            <input type="submit" value="Login">
+            <div class="login-container__signup-link">
+                <span>Not a member?</span>
+                <a href="#">Signup</a>
+            </div>
+
+        </form>
+    </div>
 
 
     <script src="https://kit.fontawesome.com/c9341f871e.js" crossorigin="anonymous"></script>
