@@ -1,0 +1,3 @@
+.user-component__container:first-child {
+    display: flex;
+}
