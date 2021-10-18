@@ -1,0 +1,190 @@
+HTML
+
+<a> --> anchor (inline)
+attribute: href="", target="_self" (기본값), "_blank" (새로운 탭에서 오픈)
+
+<img> --> image : img tag is "self-closing tag"
+atrribute: src=""
+
+[head]
+<meta> 
+tag has TWO atrribute --> content, name
+property="og:image" --> 카카오톡에서 링크가 공유될 때, 해당 사진을 보여줌.
+
+<link> --> atrribute: rel="shortcut icon" : title옆에 아이콘을 나타내줌.
+            sizes="" : 사이즈
+            href="" : 이미지의 링크
+
+Form Tags
+<tagname attribute="attrvalue">content</tagname>
+
+
+
+Inline element can't have a height and width.
+
+Block --> margin, padding, border
+
+***
+Margin: box의 border(경계)의 바깥 공간
+margin의 value를 적용할때 4개를 입력하면 위쪽부터 시계방향으로 적용된다.
+ex) margin: 20px 5px 12px 9px (상 우 하 좌)
+
+Collapsing margin effect (상하에서만 발생함)
+body안의 div의 위 아래 마진이 body의 마진과 만나면 둘 중 큰 값의 margin으로 body에 적용됨.
+흰 box
+
+어떤 두 개 이상 블록 요소의 상하 마진이 겹칠 때 어느 한 쪽의 값만 적용되는 현상
+
+Padding: box의 border(경계)의 안쪽 공간
+
+border: inline과 block 모두 적용 가능
+
+inline: 높이, 너비를 가질 수 없기 때문에 padding은 사방으로 가질 수 있지만
+margin은 좌우만 가질 수 있다.
+
+inline-block: block으로 인식하게 함.사방에 margin과 padding을 가질 수 있다.
+바로 옆에 inline처럼 요소가 올 수 있다.
+**inline-block은 반응형 디자인을 지원하지 않는다!!** -> 창크기가 달라짐에 따라 영향을 받음.
+▽
+▽ 대안
+▽
+
+Flexbox 사용
+display: flex; --> 여전히 block
+flexbox는 주축과 교차축을 가지고 있음.
+default: 주축=수평, 교차축=수직
+
+1st. 자식 엘리먼트에는 어떤 것도 적지 말아야 한다. 부모 엘리먼트에만 명시.
+2nd. justify-content는 '주축'에 적용된다.
+3rd. align-items는 '교차축'에 적용된다.
+
+길이 단위: vh(ViewPort Height) 사용자의 모니터 크기에 따라 다름.
+flex를 사용할때 중요!
+flex의 방향을 수정하는 법: 
+flex-direction: row; --> default
+flex-direction: column; --> 주축과 교차축을 바꿈.
+
+<Fixed>
+position: fixed; --> 스크롤해도 계속 그 자리에 위치하게 함. 초기에 위치했던 자리를 유지
+수정하면 그 위치로 변경됨.(properties: top, bottom, left, right)
+position: static; --> default
+**position: relative; --> 처음 위치한 곳에서 상대적으로 위치를 수정함.
+(properties: top, bottom, left, right)
+**position: absolute; --> 가장 가까운 relative 부모를 기준으로 이동함. 없으면 body를 기준으로 함.
+(top, bottom, left, right을 사용하고 싶을 때 사용함.)
+
+
+<CSS Selector>
+Parent > child --> 부모 바로 밑의 자식을 선택하는 선택자.
++ --> 형제와 바로 뒤에 오는 형제의 관계.
+~ --> 형제지만 바로 뒤에 올 필요가 없음.
+
+특성 선택자
+ex) input[type="text"] {}
+
+[attr*=value]
+attr이라는 특성값을 가지고 있으며, 값 안에 value라는 문자열이 적어도 하나 이상 존재한다면 이 요소를 선택합니다
+
+[attr~=value]
+attr이라는 이름의 특성값이 정확히 value인 요소를 선택합니다. attr 특성은 공백으로 구분한 여러 개의 값을 가지고 있을 수 있습니다.
+
+[attr$=value]
+attr이라는 특성값을 가지고 있으며, 접미사로 value가 값에 포함되어 있으면 이 요소를 선택합니다.
+
+<Pseudo selector>
+Syntax
+selector:pseudo-class {
+  property: value;
+}
+
+button:active{} --> 버튼이 선택되면 활성화됨.
+button:hover{} --> 버튼 위에 커서가 올라가면 활성화됨.
+button:focus{} --> 키보드로 선택되면 활성화됨.
+
+focus-within {} --> 내부에 focus된 element가 있는지 확인
+
+
+의사요소::  해당 HTML요소의 특정 부분만을 선택할 때 사용.
+Syntax
+selector::pseudo-element {
+  property: value;
+}
+
+selector::placeholder {} --> placeholder를 꾸며줌
+
+selector::selection{} --> 선택되면 꾸며줌
+
+<Colors and Variables>
+:root {
+    --main-color: color code;
+}
+var(--main-color)
+
+
+<Transitions>
+
+상태를 변화하는 것을 애니메이션화 하는 기능.
+transition속성은 state가 없는 요소에 붙어야함.
+
+transition: transition-property, transition-duration, transition-timing-function
+
+transition-timing-function에선 애니메이션이 변화하는 것을 함수로 설정할 수 있음.
+ease-in-out, ease, ease-in, ease-out 등등
+
+cubic-bezier() --> function을 custom할 수 있음.
+
+<Transformation>
+transform: property();
+다른 요소의 box를 변형시키지 않고 원하는 요소를 이동시키기 위해서 사용함.
+구조를 바꾸진 않음.
+
+
+<Animations>
+계속되는 애니메이션 기능을 추가하기 위해서는 style에서 @keyframes Name {}을 추가함.
+https://developer.mozilla.org/ko/docs/Web/CSS/@keyframes
+https://developer.mozilla.org/ko/docs/Web/CSS/animation
+
+0%로 스텝을 나눌 수가 있다.
+@keyframes Name {
+  from {
+
+  }
+  to {
+
+  }
+  0%~100% {}
+}
+
+animation: @keyframes time function forwards --> 마지막 keyframes to 값을 유지
+
+
+<반응형 웹 Media Query>
+@media screen and (max-width: 400px) {
+  
+} --> 스크린이 400px보다 작으면 css를 바꿈.
+
+reset css --> 기본적으로 부라우저에서 제공하는 body의 margin을 없애는 것
+h1, p tag같은 텍스트를 다루는 tag들을 가운데 정렬 할 때에는 text-align: center; 이용
+
+CSS Hack
+-레시피 같이 어디든 쓸 수 있다. 이상하지만 작동한다.
+-1 상위박스: justify-content: center; - 중앙으로 몰림
+-2 내부 박스 범위: width: 33%; -왼쪽으로 몰려서 범위 벌어짐, 왼쪽 위치할 박스는 왼쪽에 붙어서 정렬됨
+-3 중앙에 위치할 박스: display:flex; justify-content:center; = 중앙에 위치할 박스만 중앙에 위치함
+-4 오른쪽에 정렬할 박스: display:flex; justify-content:flex-end; align-items: center;- 오른쪽에 붙어서 정렬됨.
+
+
+property: inherit --> 부모의 속성을 상속받음.
+
+Form has a strong attribute
+
+Action: 어떤 페이지로 data를 보낼 건지 지정할 수 있음.
+
+Method: POST--> 백앤드 서버에 정보를 보냄
+        GET --> 보안에 취약. URL에 정보를 담아 보냄
+
+box-size: border-box: box의 사이즈를 padding값이 바뀌어도 바뀌지 않게 함.
+
+text-transform: text의 글자를 capitalize함.
+
+z-index --> layer 순서

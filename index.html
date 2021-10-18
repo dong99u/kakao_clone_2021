@@ -1,60 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kakao Talk - Login</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Welcome to Kokoa Talk</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <div class="status-bar">
-        <div class="status-bar__container">
-            <span>NG U+</span>
-            <span><i class="fas fa-wifi"></i></span>
+        <div class="status-bar__column">
+            <span>No Service</span>
+            <i class="fas fa-wifi"></i>
         </div>
-        <div class="status-bar__container">
+        <div class="status-bar__column">
             <span>18:43</span>
         </div>
-        <div class="status-bar__container">
-            <span>78%</span>
-            <span><i class="fas fa-battery-three-quarters fa-lg"></i></span>
-            <span><i class="fas fa-bolt fa-lg"></i></span>
+        <div class="status-bar__column">
+            <span>110%</span>
+            <i class="fas fa-battery-full"></i>
+            <i class="fas fa-bolt"></i>
         </div>
     </div>
 
-    <header class="header">
-        <h1 class="header__title">Welcome to KakaoTalk</h1>
-        <p class="header__text">If you have a Kakao Account, log in with your email or phone number.</p>
+    <header class="welcome-header">
+        <h1 class="welcome-header__title">Welcome to KakaoTalk</h1>
+        <p class="welcome-header__text">
+            If you have a Kakao Account, log in with your email or phone number.
+        </p>
     </header>
 
-    <div class="login-container">
-        <h2>Login</h2>
-        
-        <form class="login-container__form" action="friends.html">
-            <div class="login-container__input">
-                <input type="text" required>
-                <span></span>
-                <label for="">Username</label>
-            </div>
-            <div class="login-container__input">
-                <input type="password" required>
-                <span></span>
-                <label for="">Password</label>
-            </div>
-            <span class="login-container__pass">
-                Forgot Password?
-            </span>
-            <input type="submit" value="Login">
-            <div class="login-container__signup-link">
-                <span>Not a member?</span>
-                <a href="#">Signup</a>
-            </div>
+    <form action="friends.html" method="GET" id="login-form">
+        <input name="username" required type="text" placeholder="Email or phone number">
+        <input name="password" required type="password" placeholder="Password">
+        <input type="submit" value="Log In">
+        <a href="#">Find Kakao Account or Password</a>
+    </form>
 
-        </form>
+    <div id="no-mobile">
+        <span>Your screen is too big :(</span>
     </div>
 
 
     <script src="https://kit.fontawesome.com/c9341f871e.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

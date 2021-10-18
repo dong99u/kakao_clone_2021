@@ -1,0 +1,21 @@
+#no-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index:99;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background: linear-gradient(120deg, #6F5E74, #70829C, #C0AACD);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 70px;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 645px) {
+    #no-mobile {
+        display: none;
+    }
+}
